@@ -1,3 +1,12 @@
 import React from "react"
 
-export default () => <div>Hello Crafts Academy!</div>
+import Layout from "../components/layout"
+
+export default () => (
+  <Layout> 
+    <h1>Hello Crafts Academy!</h1>
+    <p>
+      From layout!
+    </p>
+  </Layout>
+)
