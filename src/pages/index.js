@@ -1,12 +1,21 @@
-import React from "react"
+import React from "react";
+import { graphql } from "gatsby";
 
-import Layout from "../components/layout"
+import Layout from "../components/layout";
 
-export default () => (
-  <Layout> 
-    <h2>Hello Crafts Academy!</h2>
-    <p>
-      From layout!
-    </p>
+export default ({ data }) => (
+  <Layout>
+    <h2>Hello {data.site.siteMetadata.title}</h2>
+    <p>From layout!</p>
   </Layout>
-)
+);
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
