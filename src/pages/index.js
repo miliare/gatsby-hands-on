@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 
 export default () => (
   <Layout> 
-    <h1>Hello Crafts Academy!</h1>
+    <h2>Hello Crafts Academy!</h2>
     <p>
       From layout!
     </p>
