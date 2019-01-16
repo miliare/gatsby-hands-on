@@ -1,10 +1,28 @@
 import React from "react";
+import { Link } from "gatsby";
+
+const ListLink = props => (
+  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+    <Link to={props.to}>{props.children}</Link>
+  </li>
+);
 
 class Layout extends React.Component {
   render() {
     return (
       <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
-        <h1>Hands-on Gatsby</h1>
+        <header style={{ marginBottom: `1.5rem` }}>
+          <Link
+            to="/"
+            style={{ textShadow: `none`, backgroundImage: `none` }}
+          />
+          <ul style={{ listStyle: `none`, float: `right` }}>
+            <ListLink to="/">Home</ListLink>
+            <ListLink to="/about/">About</ListLink>
+            <ListLink to="/contact/">Contact</ListLink>
+          </ul>
+        </header>
+        <br />
         {this.props.children}
       </div>
     );
