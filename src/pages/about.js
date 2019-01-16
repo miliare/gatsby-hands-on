@@ -1,7 +1,29 @@
 import React from "react"
+import styles from "./about.module.css"
+import Container from "../components/container"
 
-export default () => (
-  <div>
-    <h2>It's all about the Crafts Academy</h2>
-  </div>
-)
+const User = props => (
+    <div className={styles.user}>
+      <img src={props.avatar} className={styles.avatar} alt="" />
+      <div className={styles.description}>
+        <h2 className={styles.username}>{props.username}</h2>
+        <p className={styles.excerpt}>{props.excerpt}</p>
+      </div>
+    </div>
+  );
+  
+  export default () => (
+      <Container>
+      <h2>It's all about the Crafts Academy</h2>
+      <User
+        username="Robert C. Martin"
+        avatar="http://2017.agilesummit.gr/wp-content/uploads/2017/04/UncleBob.jpg"
+        excerpt="The unique Uncle Bob"
+      />
+      <User
+        username="Kent Beck"
+        avatar="http://media.simplecast.com/episode/image/11199/small_1441192692-artwork.jpg"
+        excerpt="Never under estimate Kent"
+      />
+    </Container>
+  );
